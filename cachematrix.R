@@ -37,8 +37,14 @@ cacheSolve <- function(x, ...) {
   x$setinverse(m)
   m
 }
-        ## Return a matrix that is the inverse of 'x'
+## Return a matrix that is the inverse of 'x'
+## if already run cacheSolve('x') (i.e.: inverse of x already calculated)
+##    the inverse matrix of 'x' saved in x$setinverse 
+##    (see makeCacheMatrix) is returned
+## if cacheSolve ('x') has not being calculated
+##    inverse matrix is calculated and saved in x$setinverse 
 
-## to check that inverse is correctly calculated run
-## a$get()%*%a$getinverse()
-## if it is correct identity matrix should be returned
+##  to check that inverse is correctly calculated run
+##    a<-makeCacheMatrix("Your Matrix")
+##    a$get()%*%a$getinverse()
+##  if it is correct identity matrix should be returned
